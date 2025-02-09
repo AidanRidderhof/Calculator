@@ -2,11 +2,23 @@
     background-color: brown;
     margin: auto;
     width: 400px;
-    height: 600px;
+    height: 500px;
     display: flex;
     flex-wrap: wrap;
 }
 
 body {
     background-color: burlywood;
+}
+
+#display {
+    width: 380px;
+    height: 80px;
+    background-color: whitesmoke;
+    margin: 10px;
+}
+
+button {
+    width:100px;
+    height: 100px;
 }
