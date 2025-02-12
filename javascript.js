@@ -32,23 +32,28 @@ function operate(a, b, operator) {
 const nums = document.getElementsByClassName("num");
 const operators = document.getElementsByClassName("operator");
 const clear = document.getElementById("clear");
+const equals = document.getElementById("equals")
 let display = document.getElementById("display");
+let sub =0; 
 
-//operators append display
+//operator logic
 for (let i=0; i<operators.length; i++){
     operators[i].addEventListener('click', function() {
-        let op = this.innerText;
-        let num1 = display.innerText;
-        num1 = +num1;
-        
+        if (display.innerText!=''){
+            let op = this.innerText;
+            let num1 = display.innerText;
+            num1 = +num1;
+            sub = 1;
+        }
     })
 }
 
 //numbers append display
 for (let i=0; i<nums.length; i++){
     nums[i].addEventListener('click', function() {
-        if (op!=null) {
+        if (sub!=0) {
             display.innerText='';
+            sub = 0;
         }
         let text = this.innerText;
         display.innerText += text;
@@ -60,3 +65,4 @@ for (let i=0; i<nums.length; i++){
 clear.addEventListener('click', function() {
     display.innerText = '';
 })
+
