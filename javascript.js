@@ -31,6 +31,7 @@ function operate(a, b, operator) {
 
 const nums = document.getElementsByClassName("num");
 const operators = document.getElementsByClassName("operator");
+const clear = document.getElementById("clear");
 let display = document.getElementById("display");
 //numbers append display
 for (let i=0; i<nums.length; i++){
@@ -47,3 +48,8 @@ for (let i=0; i<operators.length; i++){
         display.innerText += " "+text+" ";
     })
 }
+
+//clear button works
+clear.addEventListener('click', function() {
+    display.innerText = '';
+})
