@@ -12,10 +12,14 @@ body {
 }
 
 #display {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
     width: 380px;
     height: 80px;
     background-color: whitesmoke;
     margin: 10px;
+    font-size: 40px;
 }
 
 button {

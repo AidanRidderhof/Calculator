@@ -44,6 +44,6 @@ for (let i=0; i<nums.length; i++){
 for (let i=0; i<operators.length; i++){
     operators[i].addEventListener('click', function() {
         let text = this.innerText;
-        display.innerText += " "+text ;
+        display.innerText += " "+text+" ";
     })
 }
