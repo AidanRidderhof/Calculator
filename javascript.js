@@ -30,10 +30,20 @@ function operate(a, b, operator) {
 }
 
 const nums = document.getElementsByClassName("num");
+const operators = document.getElementsByClassName("operator");
 let display = document.getElementById("display");
+//numbers append display
 for (let i=0; i<nums.length; i++){
     nums[i].addEventListener('click', function() {
         let text = this.innerText;
         display.innerText += text;
+    })
+}
+
+//operators append display
+for (let i=0; i<operators.length; i++){
+    operators[i].addEventListener('click', function() {
+        let text = this.innerText;
+        display.innerText += " "+text ;
     })
 }
