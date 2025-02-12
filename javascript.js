@@ -28,3 +28,12 @@ function operate(a, b, operator) {
         divide(a,b)
     }
 }
+
+const nums = document.getElementsByClassName("num");
+let display = document.getElementById("display");
+for (let i=0; i<nums.length; i++){
+    nums[i].addEventListener('click', function() {
+        let text = this.innerText;
+        display.innerText += text;
+    })
+}
