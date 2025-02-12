@@ -1,31 +1,10 @@
-function add(a, b) {
-    return a+b;
-}
-
-function subtract(a, b) {
-    return a-b;
-}
-
-function multiply(a, b) {
-    return a*b;
-}
-
-function divide(a, b) {
-    return a/b;
-}
-
-function operate(a, b, operator) {
-    if  (operator == '+') {
-        add(a,b)
-    }
-    if  (operator == '-') {
-        subtract(a,b)
-    }
-    if  (operator == '*') {
-        multiply(a,b)
-    }
-    if  (operator == '/') {
-        divide(a,b)
+function operate(num1, num2, op) {
+    switch (op) {
+        case '+': return num1 + num2;
+        case '-': return num1 - num2;
+        case '*': return num1 * num2;
+        case '/': return num2 !== 0 ? num1 / num2 : "Error";
+        default: return "Invalid Operation";
     }
 }
 
@@ -35,13 +14,15 @@ const clear = document.getElementById("clear");
 const equals = document.getElementById("equals")
 let display = document.getElementById("display");
 let sub =0; 
+let op;
+let num1;
 
 //operator logic
 for (let i=0; i<operators.length; i++){
     operators[i].addEventListener('click', function() {
         if (display.innerText!=''){
-            let op = this.innerText;
-            let num1 = display.innerText;
+            op = this.innerText;
+            num1 = display.innerText;
             num1 = +num1;
             sub = 1;
         }
@@ -66,3 +47,15 @@ clear.addEventListener('click', function() {
     display.innerText = '';
 })
 
+//result appends screen
+equals.addEventListener('click', function() {
+    let num2 = display.innerText;
+    num2 = +num2;
+    console.log(typeof num1);
+    console.log(typeof op);
+    console.log(typeof num2);
+
+    let result = operate(num1, num2, op)
+    display.innerText='';
+    display.innerText += result
+})
