@@ -17,6 +17,8 @@ let display = document.getElementById("display");
 let sub =0; 
 let op;
 let num1;
+let num2;
+let result;
 
 //operator logic
 for (let i=0; i<operators.length; i++){
@@ -50,15 +52,19 @@ clear.addEventListener('click', function() {
 
 //result appends screen
 equals.addEventListener('click', function() {
-    let num2 = display.innerText;
-    num2 = +num2;
-    console.log(typeof num1);
-    console.log(typeof op);
-    console.log(typeof num2);
+    if (num1!=null && op !=null){
+        num2 = display.innerText;
+        num2 = +num2;
+        console.log(typeof num1);
+        console.log(typeof op);
+        console.log(typeof num2);
 
-    let result = operate(num1, num2, op)
-    display.innerText='';
-    display.innerText += result
+        result = operate(num1, num2, op)
+        display.innerText='';
+        display.innerText += result
+        num1 = result;
+        op = null;
+    }
 })
 
 //create dec button and cant b used multiple times
