@@ -12,6 +12,7 @@ const nums = document.getElementsByClassName("num");
 const operators = document.getElementsByClassName("operator");
 const clear = document.getElementById("clear");
 const equals = document.getElementById("equals")
+const dec = document.getElementById("decimal");
 let display = document.getElementById("display");
 let sub =0; 
 let op;
@@ -59,3 +60,13 @@ equals.addEventListener('click', function() {
     display.innerText='';
     display.innerText += result
 })
+
+//create dec button and cant b used multiple times
+dec.addEventListener('click', function() {
+    let input = display.innerText;
+
+    // Only add a decimal if there's no existing decimal point
+    if (!input.includes('.')) {
+        display.innerText += '.';
+    }
+});
